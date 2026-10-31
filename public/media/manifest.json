@@ -78,5 +78,37 @@
     "width": 1080,
     "height": 1920,
     "bytes": 2025701
+  },
+  {
+    "id": "break-the-pattern",
+    "source": "BREAK-THE-PATTERN.mp4",
+    "duration": 15.019,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 2654786
+  },
+  {
+    "id": "hairpeps-ugc",
+    "source": "HairPeps-UGC.mp4",
+    "duration": 25.514,
+    "width": 1080,
+    "height": 1920,
+    "bytes": 4444690
+  },
+  {
+    "id": "make-it-move",
+    "source": "MAKE-IT-MOVE.mp4",
+    "duration": 15.0,
+    "width": 1920,
+    "height": 1080,
+    "bytes": 1846445
+  },
+  {
+    "id": "mini-humidifier",
+    "source": "mini-humidifier-ad.mp4",
+    "duration": 15.019,
+    "width": 1080,
+    "height": 1920,
+    "bytes": 2034682
   }
 ]

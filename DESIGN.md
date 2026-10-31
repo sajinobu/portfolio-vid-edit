@@ -30,3 +30,9 @@ The production build passed. Browser checks passed at 320, 390, 768, 1024, and 1
 Desktop, phone, tablet, light-mode, and video-dialog captures were visually reviewed. The rotated hero frames were given more space above the timeline and the product-promo poster was moved to a fully visible frame. The implementation retains the original site's palette, type roles, and identity. Evidence is in ignored `artifacts/qa/`.
 
 The revised selection follows the user's exact ten-video list, excluding both Trixy Castro samples and adding Akon’s Paycheck and the Miyagi short. All ten are visible by default. The hero is keyed by project ID in the explicit order Deep Blue, Akon’s Paycheck, ChrisReel. The new hero links and Miyagi playback passed browser checks; removed media is absent from both public assets and the production output.
+
+## October 31 additions
+
+The updates are now synchronized to the user's active `C:/Users/jenne/Documents/GitHub/portfolio-vid-edit` repository. HairPeps and the mini humidifier ad use a separate AI UGC filter, as confirmed by the user.
+
+Added Break the Pattern and Make It Move to Motion, and HairPeps UGC and the mini humidifier ad to Short-form. Refreshed Voynich from the supplied source without duplicating its project entry. The gallery now shows fourteen unique studies; the hero selection is unchanged. Poster frames were inspected from the actual videos, avoiding empty transition frames. Production asset validation and browser playback checks passed for all five supplied videos, together with the existing responsive and interaction checks.

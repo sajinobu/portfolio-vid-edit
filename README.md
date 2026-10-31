@@ -2,6 +2,12 @@
 
 A separate React + Vite portfolio based on the navy/mint palette and typography of the existing software portfolio. The original portfolio and original video files were not modified.
 
+## Working folder
+
+The active repository is `C:/Users/jenne/Documents/GitHub/portfolio-vid-edit`. Run development commands there. The ChatGPT workspace is the preparation copy.
+
+HairPeps and the mini humidifier ad are in the **AI UGC** category (`?type=ai-ugc`).
+
 ## Run locally
 
 Use Node.js 22.12 or newer (Node 20.19 is also supported by the installed Vite version).
@@ -37,7 +43,7 @@ After choosing a production domain, use its full URL for `og:image` in `index.ht
 - `public/media/`: web video copies and poster images. Add an MP4 and JPG with the same ID as a project entry.
 - `public/media/manifest.json`: source filenames, measured durations, dimensions, and optimized file sizes.
 
-All ten requested portfolio studies appear in the gallery by default, with category filters. Both Akon edits and the Miyagi study are included; both Trixy Castro videos are excluded. The hero features Deep Blue, Akon’s Paycheck, and ChrisReel from left to right.
+All fourteen portfolio studies appear in the gallery by default, with category filters. The latest additions are Break the Pattern, HairPeps UGC, Make It Move, and the mini humidifier ad. Voynich is refreshed in place without creating a duplicate. Both Trixy Castro videos remain excluded. The hero features Deep Blue, Akon’s Paycheck, and ChrisReel from left to right.
 
 All samples are labeled portfolio studies, as requested. No client relationships, testimonials, view counts, or performance claims are invented. Remotion is included as “Code-based animation.” Email and LinkedIn are reused from the existing portfolio.
 
@@ -53,13 +59,13 @@ To regenerate media, use Python with Pillow for the optional inspection script a
 python scripts/prepare-media.py --source "PATH_TO_ORIGINAL_VIDEOS" --ffmpeg "PATH_TO_FFMPEG" --ffprobe "PATH_TO_FFPROBE"
 ```
 
-The converter skips existing MP4 files and refreshes poster images. Remove only a web copy you intend to regenerate before rerunning.
+The converter skips existing MP4 files and refreshes poster images. Use `--refresh voynich` (or another project ID) to replace an existing web copy from its original file.
 
 ## Checks
 
 `npm run build` checks the production bundle. `scripts/qa.cjs` runs browser checks using an available Playwright installation and local Chrome. Set `NODE_PATH` to the directory containing Playwright if it is not installed in this project. Optionally set `QA_URL` to a production preview URL.
 
-The checks cover all ten gallery entries, the three hero videos and their order, category counts, actual video playback, dialog focus and Escape, theme persistence, copying the email, shared project links, mobile navigation, reduced motion, runtime errors, and horizontal overflow at 320 / 390 / 768 / 1024 / 1440 pixels. Captures and the test report are written to ignored `artifacts/qa/`.
+The checks cover all fourteen gallery entries, playback of the latest uploads, the three hero videos and their order, category counts, actual video playback, dialog focus and Escape, theme persistence, copying the email, shared project links, mobile navigation, reduced motion, runtime errors, and horizontal overflow at 320 / 390 / 768 / 1024 / 1440 pixels. Captures and the test report are written to ignored `artifacts/qa/`.
 
 ## Interaction and accessibility
 

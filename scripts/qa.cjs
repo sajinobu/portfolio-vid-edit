@@ -22,7 +22,7 @@ const path = require("node:path");
     path: path.join(out, "desktop.png"),
     fullPage: true,
   });
-  assert.equal(await page.locator(".project-card").count(), 10);
+  assert.equal(await page.locator(".project-card").count(), 14);
   assert.equal(await page.getByText(/Trixy/i).count(), 0);
   assert.deepEqual(
     await page
@@ -55,7 +55,7 @@ const path = require("node:path");
   assert.equal(await page.locator(".project-card").count(), 3);
   assert.match(page.url(), /type=clips/);
   await page.getByRole("button", { name: "Motion", exact: true }).click();
-  assert.equal(await page.locator(".project-card").count(), 4);
+  assert.equal(await page.locator(".project-card").count(), 6);
   await page.getByRole("button", { name: "Short-form", exact: true }).click();
   assert.equal(await page.locator(".project-card").count(), 3);
   await page.getByRole("button", { name: "Watch The Miyagi method." }).click();
@@ -71,7 +71,39 @@ const path = require("node:path");
   );
   await page.getByRole("button", { name: "Close video" }).click();
   await page.getByRole("button", { name: "All work" }).click();
-  assert.equal(await page.locator(".project-card").count(), 10);
+  assert.equal(await page.locator(".project-card").count(), 14);
+  await page.getByRole("button", { name: "AI UGC", exact: true }).click();
+  assert.equal(await page.locator(".project-card").count(), 2);
+  assert.match(page.url(), /type=ai-ugc/);
+  assert.deepEqual(await page.locator('.project-card h3').allTextContents(), ['HairPeps UGC.', 'Room for the little things.']);
+  await page.reload();
+  assert.equal(await page.getByRole('button', { name: 'AI UGC', exact: true }).getAttribute('aria-pressed'), 'true');
+  assert.equal(await page.locator('.project-card').count(), 2);
+  await page.locator('#work').scrollIntoViewIfNeeded();
+  await page.screenshot({ path: path.join(out, 'ai-ugc-desktop.png') });
+  await page.getByRole("button", { name: "All work" }).click();
+  for (const title of [
+    "Break the pattern.",
+    "HairPeps UGC.",
+    "Make it move.",
+    "Room for the little things.",
+    "A mystery in every page.",
+  ]) {
+    const card = page
+      .locator(".project-card")
+      .filter({ has: page.getByRole("heading", { name: title, exact: true }) });
+    assert.equal(await card.count(), 1);
+    await card
+      .getByRole("button", { name: `Watch ${title}`, exact: true })
+      .click();
+    await page.waitForFunction(
+      () => document.querySelector("video")?.readyState >= 2,
+    );
+    await page.waitForFunction(
+      () => document.querySelector("video")?.currentTime > 0.1,
+    );
+    await page.getByRole("button", { name: "Close video" }).click();
+  }
   await page
     .locator(".project-card")
     .first()
@@ -177,7 +209,8 @@ const path = require("node:path");
         viewports: [320, 390, 768, 1024, 1440],
         checks: [
           "filters",
-          "all ten gallery entries",
+          "all fourteen gallery entries",
+          "new uploads and Voynich playback without duplication",
           "requested hero order and playback",
           "Miyagi playback",
           "on-demand playback",

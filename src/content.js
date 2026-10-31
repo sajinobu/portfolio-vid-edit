@@ -117,6 +117,64 @@ export const projects = [
     techniques: ["Podcast clipping", "Caption timing", "Vertical reframing"],
     note: "An independent editing study using existing footage. No client relationship or endorsement implied.",
   },
+  {
+    id: "break-the-pattern",
+    title: "Break the pattern.",
+    subtitle: "Typography & geometric motion study",
+    category: "Motion",
+    duration: 15,
+    landscape: true,
+    description:
+      "Bold blue typography and geometric forms explore disruption through changing patterns and animated compositions.",
+    techniques: ["Kinetic typography", "Geometric animation", "Transitions"],
+    note: "A personal motion design study.",
+  },
+  {
+    id: "hairpeps-ugc",
+    title: "HairPeps UGC.",
+    subtitle: "HairPeps · AI UGC ad",
+    category: "AI UGC",
+    duration: 26,
+    description:
+      "An AI UGC product-ad study built around close-up demonstrations and a vertical, creator-style presentation.",
+    techniques: [
+      "Product demonstration",
+      "Short-form pacing",
+      "Vertical editing",
+    ],
+    note: "A portfolio advertising study. No client relationship or endorsement implied.",
+  },
+  {
+    id: "make-it-move",
+    title: "Make it move.",
+    subtitle: "Type, shape & rhythm · Motion study",
+    category: "Motion",
+    duration: 15,
+    landscape: true,
+    description:
+      "Oversized type, orbiting shapes, and graphic transitions explore movement with a restrained black, cream, and red palette.",
+    techniques: [
+      "Kinetic typography",
+      "Shape animation",
+      "Graphic transitions",
+    ],
+    note: "A personal motion design study.",
+  },
+  {
+    id: "mini-humidifier",
+    title: "Room for the little things.",
+    subtitle: "Mini humidifier · AI UGC ad",
+    category: "AI UGC",
+    duration: 15,
+    description:
+      "An AI UGC product-ad study combining a bedside demonstration, on-screen headlines, and captions in a vertical format.",
+    techniques: [
+      "Product storytelling",
+      "On-screen typography",
+      "Caption styling",
+    ],
+    note: "A portfolio product-ad concept, presented as an editing study rather than a commissioned campaign.",
+  },
 ];
 export const services = [
   {

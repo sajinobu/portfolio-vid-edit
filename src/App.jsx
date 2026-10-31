@@ -63,12 +63,13 @@ function Icon({ name, size = 20, ...props }) {
     </svg>
   );
 }
-const filters = ["All work", "Clips", "Short-form", "Motion"];
+const filters = ["All work", "Clips", "Short-form", "Motion", "AI UGC"];
 const filterKeys = {
   "All work": "",
   Clips: "clips",
   "Short-form": "short-form",
   Motion: "motion",
+  "AI UGC": "ai-ugc",
 };
 const formatTime = (seconds) =>
   `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
@@ -492,7 +493,7 @@ function App() {
                   </span>
                   {project.landscape && (
                     <span className="landscape-label mono">
-                      16:9 / PRODUCT MOTION
+                      16:9 / MOTION DESIGN
                     </span>
                   )}
                 </button>
